@@ -53,7 +53,7 @@ function clickButtonCurrencyTwo(event) {
     result();
 }
 
-function result() { //displaying result
+function result() { /*displaying result*/
     sum = inputOne.value;
     sumTwo = inputTwo.value;
     converter();
@@ -74,11 +74,11 @@ function converter() {
         .then(data => {
             exchangeTwo.innerText = `1 ${two} = ${data.result.toFixed(4)} ${one}`;
         })
-    if (bool == true && one == two) { //if currencies are same, then there is no any error
+    if (bool == true && one == two) { /*if currencies are same, then there is no any error*/
         inputTwo.value = inputOne.value;
         return;
     }
-    if (bool == false && two == one) { //if currencies are same, then there is no any error
+    if (bool == false && two == one) { /*if currencies are same, then there is no any error*/
         inputOne.value = inputTwo.value;
         return;
     }
