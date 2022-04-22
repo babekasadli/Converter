@@ -1,9 +1,9 @@
-const currencyOne = document.querySelectorAll('#currency1'); //left side buttons
-const currencyTwo = document.querySelectorAll('#currency2'); //right side buttons
-const inputOne = document.querySelector('#input1'); // left input  
-const inputTwo = document.querySelector('#input2'); // right input
-const exchangeOne = document.querySelector('#exchange1'); //left exchange information
-const exchangeTwo = document.querySelector('#exchange2'); //right exchange information
+const currencyOne = document.querySelectorAll('#currency1'); /*left side buttons*/
+const currencyTwo = document.querySelectorAll('#currency2'); /*right side buttons*/
+const inputOne = document.querySelector('#input1'); /*left input*/
+const inputTwo = document.querySelector('#input2'); /*right input*/
+const exchangeOne = document.querySelector('#exchange1'); /*left exchange information*/
+const exchangeTwo = document.querySelector('#exchange2'); /*right exchange information*/
 
 let one = 'RUB';
 let two = 'USD';
@@ -59,7 +59,7 @@ function result() { //displaying result
     converter();
 }
 
-// converter -------------
+/* converter -------------*/
 
 function converter() {
     let urlTwo = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=1`;
