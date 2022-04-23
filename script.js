@@ -1,9 +1,9 @@
-const currencyOne = document.querySelectorAll('#currency1'); /*left side buttons*/
-const currencyTwo = document.querySelectorAll('#currency2'); /*right side buttons*/
-const inputOne = document.querySelector('#input1'); /*left input*/
-const inputTwo = document.querySelector('#input2'); /*right input*/
-const exchangeOne = document.querySelector('#exchange1'); /*left exchange information*/
-const exchangeTwo = document.querySelector('#exchange2'); /*right exchange information*/
+const currencyOne = document.querySelectorAll('#currency1');
+const currencyTwo = document.querySelectorAll('#currency2');
+const inputOne = document.querySelector('#input1');
+const inputTwo = document.querySelector('#input2');
+const exchangeOne = document.querySelector('#exchange1');
+const exchangeTwo = document.querySelector('#exchange2');
 
 let one = 'RUB';
 let two = 'USD';
@@ -53,13 +53,11 @@ function clickButtonCurrencyTwo(event) {
     result();
 }
 
-function result() { /*displaying result*/
+function result() {
     sum = inputOne.value;
     sumTwo = inputTwo.value;
     converter();
 }
-
-/* converter -------------*/
 
 function converter() {
     let urlTwo = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=1`;
@@ -74,11 +72,11 @@ function converter() {
         .then(data => {
             exchangeTwo.innerText = `1 ${two} = ${data.result.toFixed(4)} ${one}`;
         })
-    if (bool == true && one == two) { /*if currencies are same, then there is no any error*/
+    if (bool == true && one == two) {
         inputTwo.value = inputOne.value;
         return;
     }
-    if (bool == false && two == one) { /*if currencies are same, then there is no any error*/
+    if (bool == false && two == one) {
         inputOne.value = inputTwo.value;
         return;
     }
