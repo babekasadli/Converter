@@ -5,10 +5,10 @@ const inputTwo = document.querySelector('#input2'); /*right input*/
 const exchangeOne = document.querySelector('#exchange1'); /*left exchange*/
 const exchangeTwo = document.querySelector('#exchange2'); /*right exchange*/
 
-let one = 'RUB';
-let two = 'USD';
-let sum = inputOne.value = 1;
-let sumTwo = inputTwo.value;
+let one = 'RUB'; /*left selected currency*/
+let two = 'USD'; /*right selected currency*/
+let sum = inputOne.value = 1; /*left input current value*/
+let sumTwo = inputTwo.value; /*right input current value*/
 
 /* left side default selection */
 currencyOne.forEach((currencyOne) => {
@@ -32,7 +32,7 @@ currencyTwo.forEach((currencyTwo) => {
 function clickButtonCurrencyOne(event) {
     currencyOne.forEach((currencyOne) => {
         if (currencyOne.style.background !== '') {
-            currencyOne.style.background = '';
+            currencyOne.style.background = '#FFFFFF';
             currencyOne.style.color = '#C6C6C6';
         }
     });
@@ -46,7 +46,7 @@ function clickButtonCurrencyOne(event) {
 function clickButtonCurrencyTwo(event) {
     currencyTwo.forEach((currencyTwo) => {
         if (currencyTwo.style.background !== '') {
-            currencyTwo.style.background = '';
+            currencyTwo.style.background = '#FFFFFF';
             currencyTwo.style.color = '#C6C6C6';
         }
     });
