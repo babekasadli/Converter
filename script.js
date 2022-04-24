@@ -54,8 +54,8 @@ function clickButtonCurrencyTwo(event) {
 }
 
 function result() {
-    sum = inputOne.value;
-    sumTwo = inputTwo.value;
+    sum = inputOne.value.replace(/,/g, '.');
+    sumTwo = inputTwo.value.replace(/,/g, '.');
     converter();
 }
 
@@ -73,11 +73,11 @@ function converter() {
             exchangeTwo.innerText = `1 ${two} = ${data.result.toFixed(4)} ${one}`;
         })
     if (bool == true && one == two) {
-        inputTwo.value = inputOne.value;
+        inputTwo.value = inputOne.value.replace(/,/g, '.');
         return;
     }
     if (bool == false && two == one) {
-        inputOne.value = inputTwo.value;
+        inputOne.value = inputTwo.value.replace(/,/g, '.');
         return;
     }
     if (bool == true) {
