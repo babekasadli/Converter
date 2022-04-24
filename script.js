@@ -1,15 +1,16 @@
-const currencyOne = document.querySelectorAll('#currency1');
-const currencyTwo = document.querySelectorAll('#currency2');
-const inputOne = document.querySelector('#input1');
-const inputTwo = document.querySelector('#input2');
-const exchangeOne = document.querySelector('#exchange1');
-const exchangeTwo = document.querySelector('#exchange2');
+const currencyOne = document.querySelectorAll('#currency1'); /*left buttons*/
+const currencyTwo = document.querySelectorAll('#currency2'); /*right buttons*/
+const inputOne = document.querySelector('#input1'); /*left input*/
+const inputTwo = document.querySelector('#input2'); /*right input*/
+const exchangeOne = document.querySelector('#exchange1'); /*left exchange*/
+const exchangeTwo = document.querySelector('#exchange2'); /*right exchange*/
 
 let one = 'RUB';
 let two = 'USD';
 let sum = inputOne.value = 1;
 let sumTwo = inputTwo.value;
 
+/* left side default selection */
 currencyOne.forEach((currencyOne) => {
     if (currencyOne.innerText == one) {
         currencyOne.style.background = '#833AE0';
@@ -18,6 +19,7 @@ currencyOne.forEach((currencyOne) => {
     currencyOne.addEventListener('click', clickButtonCurrencyOne);
 });
 
+/* right side default selection */
 currencyTwo.forEach((currencyTwo) => {
     if (currencyTwo.innerText == two) {
         currencyTwo.style.background = '#833AE0';
@@ -26,6 +28,7 @@ currencyTwo.forEach((currencyTwo) => {
     currencyTwo.addEventListener('click', clickButtonCurrencyTwo);
 });
 
+/*left side click actions */
 function clickButtonCurrencyOne(event) {
     currencyOne.forEach((currencyOne) => {
         if (currencyOne.style.background !== '') {
@@ -39,6 +42,7 @@ function clickButtonCurrencyOne(event) {
     result();
 }
 
+/*right side click actions */
 function clickButtonCurrencyTwo(event) {
     currencyTwo.forEach((currencyTwo) => {
         if (currencyTwo.style.background !== '') {
@@ -59,6 +63,7 @@ function result() {
 }
 
 function converter() {
+    /* Update of exchanges */
     let urlTwo = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=1`;
     fetch(urlTwo)
         .then(res => res.json())
@@ -71,7 +76,11 @@ function converter() {
         .then(data => {
             exchangeTwo.innerText = `1 ${two} = ${data.result.toFixed(4)} ${one}`;
         })
-    if (one == two) {
+
+    /* Convert operation */
+    if (inputOne.value == '') {
+        inputTwo.value = '';
+    } else if (one == two) {
         inputTwo.value = inputOne.value.replace(/,/g, '.');
         return;
     } else {
@@ -79,11 +88,7 @@ function converter() {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                if (inputOne.value == '') {
-                    inputTwo.value = '';
-                } else {
-                    inputTwo.value = data.result.toFixed(4);
-                }
+                inputTwo.value = data.result.toFixed(4);
             })
             .catch((err) => {
                 alert('Something went wrong!');
