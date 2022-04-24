@@ -159,3 +159,12 @@ input:focus {
     background-color: #833AE0;
     color: #FFFFFF;
 }
+
+@media only screen and (max-width: 900px) {
+    .mainblock {
+        flex-direction: column;
+    }
+    .menu {
+        display: none;
+    }
+}
