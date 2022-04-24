@@ -160,14 +160,14 @@ input:focus {
     color: #FFFFFF;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 400px) {
     .mainblock {
         flex-direction: column;
     }
-    .status {
-        margin-bottom: 40px;
-    }
     .menu {
         display: none;
+    }
+    .status {
+        margin-bottom: 20px;
     }
 }
