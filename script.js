@@ -14,7 +14,7 @@ let sumTwo = inputTwo.value; /*right input current value*/
 currencyOne.forEach((currencyOne) => {
     if (currencyOne.innerText == one) {
         currencyOne.style.background = '#833AE0';
-        currencyOne.style.color = '#FFFFFF';
+        currencyOne.style.color = '';
     }
     currencyOne.addEventListener('click', clickButtonCurrencyOne);
 });
@@ -23,7 +23,7 @@ currencyOne.forEach((currencyOne) => {
 currencyTwo.forEach((currencyTwo) => {
     if (currencyTwo.innerText == two) {
         currencyTwo.style.background = '#833AE0';
-        currencyTwo.style.color = '#FFFFFF';
+        currencyTwo.style.color = '';
     }
     currencyTwo.addEventListener('click', clickButtonCurrencyTwo);
 });
