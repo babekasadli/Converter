@@ -9,7 +9,6 @@ let one = 'RUB';
 let two = 'USD';
 let sum = inputOne.value = 1;
 let sumTwo = inputTwo.value;
-let bool = true;
 
 currencyOne.forEach((currencyOne) => {
     if (currencyOne.innerText == one) {
@@ -72,46 +71,23 @@ function converter() {
         .then(data => {
             exchangeTwo.innerText = `1 ${two} = ${data.result.toFixed(4)} ${one}`;
         })
-    if (bool == true && one == two) {
+    if (one == two) {
         inputTwo.value = inputOne.value.replace(/,/g, '.');
         return;
-    }
-    if (bool == false && two == one) {
-        inputOne.value = inputTwo.value.replace(/,/g, '.');
-        return;
-    }
-    if (bool == true) {
+    } else {
         let url = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=${sum}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                inputTwo.value = data.result.toFixed(4);
+                if (inputOne.value == '') {
+                    inputTwo.value = '';
+                } else {
+                    inputTwo.value = data.result.toFixed(4);
+                }
             })
             .catch((err) => {
-                alert('error!');
-            })
-    }
-    if (bool == false) {
-        let url = `https://api.exchangerate.host/convert?from=${two}&to=${one}&amount=${sumTwo}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                inputOne.value = data.result.toFixed(4);
-            })
-            .catch((err) => {
-                alert('error!');
+                alert('Something went wrong!');
             })
     }
 }
 converter();
-
-inputOne.addEventListener('click', rev);
-inputTwo.addEventListener('click', revTwo);
-
-function rev() {
-    bool = true;
-};
-
-function revTwo() {
-    bool = false;
-};
