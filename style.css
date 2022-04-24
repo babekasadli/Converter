@@ -167,11 +167,14 @@ input:focus {
     .mainblock {
         flex-direction: column;
     }
-    .menu {
-        display: none;
-    }
     .status {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+    }
+    .menu {
+        justify-content: center;
+    }
+    .menu a:nth-child(n+2) {
+        display: none;
     }
 }
 
@@ -179,10 +182,13 @@ input:focus {
     .mainblock {
         flex-direction: column;
     }
-    .menu {
-        display: none;
-    }
     .status {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+    }
+    .menu {
+        justify-content: center;
+    }
+    .menu a:nth-child(n+2) {
+        display: none;
     }
 }
