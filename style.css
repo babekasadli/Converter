@@ -164,6 +164,9 @@ input:focus {
     .mainblock {
         flex-direction: column;
     }
+    .status {
+        margin-bottom: 40px;
+    }
     .menu {
         display: none;
     }
