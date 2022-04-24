@@ -160,7 +160,7 @@ input:focus {
     color: #FFFFFF;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 350px) {
     .mainblock {
         flex-direction: column;
     }
