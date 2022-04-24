@@ -176,6 +176,28 @@ input:focus {
     .menu a:nth-child(n+2) {
         display: none;
     }
+    #main {
+        width: 80%;
+    }
+    .logo {
+        margin-left: 50px;
+    }
+    .login {
+        margin-right: 50px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .mainblock {
+        justify-content: center;
+        align-self: center;
+    }
+    .block1 {
+        align-self: center;
+    }
+    .block2 {
+        align-self: center;
+    }
 }
 
 @media only screen and (max-width: 350px) {
@@ -190,5 +212,27 @@ input:focus {
     }
     .menu a:nth-child(n+2) {
         display: none;
+    }
+    #main {
+        width: 80%;
+    }
+    .logo {
+        margin-left: 50px;
+    }
+    .login {
+        margin-right: 50px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .mainblock {
+        justify-content: center;
+        align-self: center;
+    }
+    .block1 {
+        align-self: center;
+    }
+    .block2 {
+        align-self: center;
     }
 }
