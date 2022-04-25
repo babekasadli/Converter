@@ -10,7 +10,7 @@ let two = 'USD'; /*right selected currency*/
 let sum = inputOne.value = 1; /*left input current value*/
 let sumTwo = inputTwo.value; /*right input current value*/
 
-inputOne.addEventListener('change', result);
+inputOne.addEventListener('keyup', result);
 
 /* left side default selection */
 currencyOne.forEach((currencyOne) => {

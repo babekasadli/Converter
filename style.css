@@ -141,6 +141,12 @@ input {
     border-color: #833AE0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .exchange {
     margin: 0 0 0 15px;
     font-size: 12px;
