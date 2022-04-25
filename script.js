@@ -9,8 +9,12 @@ let one = 'RUB'; /*left selected currency*/
 let two = 'USD'; /*right selected currency*/
 let sum = inputOne.value = 1; /*left input current value*/
 let sumTwo = inputTwo.value; /*right input current value*/
+let bool = true;
 
 inputOne.addEventListener('keyup', result);
+inputTwo.addEventListener('keyup', result);
+inputOne.addEventListener('click', rev);
+inputTwo.addEventListener('click', revTwo);
 
 /* left side default selection */
 currencyOne.forEach((currencyOne) => {
@@ -86,15 +90,35 @@ function converter() {
         inputTwo.value = inputOne.value.replace(/,/g, '.');
         return;
     } else {
-        let url = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=${sum}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                inputTwo.value = data.result.toFixed(4);
-            })
-            .catch((err) => {
-                alert('Something went wrong!');
-            })
+        if (bool == true) {
+            let url = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=${sum}`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    inputTwo.value = data.result.toFixed(4);
+                })
+                .catch((err) => {
+                    alert('Something went wrong!');
+                })
+        } else {
+            let url = `https://api.exchangerate.host/convert?from=${two}&to=${one}&amount=${sumTwo}`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    inputOne.value = data.result.toFixed(4);
+                })
+                .catch((err) => {
+                    alert('Something went wrong!');
+                })
+        }
     }
 }
+
+function rev() {
+    bool = true;
+};
+
+function revTwo() {
+    bool = false;
+};
 converter();
