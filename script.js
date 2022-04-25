@@ -71,8 +71,8 @@ function clickButtonCurrencyTwo(event) {
 }
 
 function result() {
-    sum = inputOne.value.replace(/,/g, '.');
-    sumTwo = inputTwo.value.replace(/,/g, '.');
+    sum = inputOne.value;
+    sumTwo = inputTwo.value;
     converter();
 }
 
@@ -101,7 +101,7 @@ function converter() {
         inputOne.value = 0;
         sum = '';
     } else if (one == two) {
-        inputTwo.value = inputOne.value.replace(/,/g, '.');
+        inputTwo.value = inputOne.value;
         return;
     } else {
         if (bool == true) {
