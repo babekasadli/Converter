@@ -16,6 +16,14 @@ inputTwo.addEventListener('keyup', result);
 inputOne.addEventListener('click', rev);
 inputTwo.addEventListener('click', revTwo);
 
+function rev() {
+    bool = true;
+};
+
+function revTwo() {
+    bool = false;
+};
+
 /* left side default selection */
 currencyOne.forEach((currencyOne) => {
     if (currencyOne.innerText == one) {
@@ -84,8 +92,14 @@ function converter() {
         })
 
     /* Convert operation */
-    if (inputOne.value == '') {
-        inputTwo.value = '';
+
+    if (bool == true && inputOne.value == '') {
+        inputTwo.value = 0;
+        sumTwo = '';
+    }
+    if (bool == false && inputTwo.value == '') {
+        inputOne.value = 0;
+        sum = '';
     } else if (one == two) {
         inputTwo.value = inputOne.value.replace(/,/g, '.');
         return;
@@ -113,12 +127,4 @@ function converter() {
         }
     }
 }
-
-function rev() {
-    bool = true;
-};
-
-function revTwo() {
-    bool = false;
-};
 converter();
