@@ -12,16 +12,8 @@ let bool = true;
 inputOne.value = 1;
 inputOne.addEventListener('keyup', converter);
 inputTwo.addEventListener('keyup', converter);
-inputOne.addEventListener('click', rev);
-inputTwo.addEventListener('click', revTwo);
-
-function rev() {
-    bool = true;
-};
-
-function revTwo() {
-    bool = false;
-};
+inputOne.addEventListener('click', () => bool = true);
+inputTwo.addEventListener('click', () => bool = false);
 
 currencyOne.forEach((currencyOne) => {
     if (currencyOne.innerText == one) {
