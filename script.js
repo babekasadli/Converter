@@ -70,12 +70,14 @@ function converter() {
         .then(data => {
             exchangeTwo.innerText = `1 ${two} = ${data.result.toFixed(4)} ${one}`;
         })
-    if (one == two && bool == true) {
-        inputTwo.value = inputOne.value;
-        return;
-    } else if (one == two && bool == false) {
-        inputOne.value = inputTwo.value;
-        return;
+    if (one == two) {
+        if (bool == true) {
+            inputTwo.value = inputOne.value;
+            return;
+        } else {
+            inputOne.value = inputTwo.value;
+            return;
+        }
     } else {
         if (bool == true) {
             let url = `https://api.exchangerate.host/convert?from=${one}&to=${two}&amount=${inputOne.value}`;
