@@ -138,7 +138,6 @@ input {
     font-size: 36px;
     font-weight: 700;
     width: 230px;
-    border-color: #833AE0;
 }
 
 input::-webkit-outer-spin-button,
